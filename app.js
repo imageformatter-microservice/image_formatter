@@ -1,31 +1,33 @@
 const express = require('express');
-const morgan = require('morgan');
-const helmet = require('helmet');
+// const morgan = require('morgan');
+// const helmet = require('helmet');
 const bodyParser = require('body-parser');
+const fileUpload = require('express-fileupload');
 
 
 const app = express();
+const port = 5080
 
-
-app.use(helmet());
-app.use(morgan('dev'));
+// app.use(helmet());
+// app.use(morgan('dev'));
 app.use(bodyParser.json());
 
+app.use(fileUpload())
 
 // Routes
-  // /upload
-  // /resize
-  // -- /crop
-  // -- /convert
-
 const upload = require('./routes/upload');
-const resize = require('./routes/resize')
-const crop = require('./routes/crop')
-const convert = requires('./routes/convert')
+const resize = require('./routes/resize');
+const crop = require('./routes/crop');
+const convert = require('./routes/convert');
 
 app.use('/upload', upload)
 app.use('/resize', resize)
-app.use('./crop', crop)
-app.use('./convert', convert)
+app.use('/crop', crop)
+app.use('/convert', convert)
+
+app.listen(port, () => {
+  console.log(`Listening on ${port}`)
+})
 
 module.exports = app;
+
