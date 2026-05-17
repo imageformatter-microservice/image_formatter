@@ -66,3 +66,9 @@ The client should save the response to a file such as: `converted.png`
 The saved file can then be opened normally.
 
 # UML Sequence Diagram:
+
+
+
+
+
+Authors: Oren Paley and Emily Tsui
