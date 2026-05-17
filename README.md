@@ -19,7 +19,7 @@ The microservice communicates over HTTP using POST requests and multipart form d
 The client must provide: An uploaded image file using the field name `img`
 
 ## Resize Endpoint: POST/resize
-Resizing an image.
+Resizing an image. Sharp saves the image as bytes using toBuffer(). The resized buffer will be sent back to the user to download.
 
 Fields required are a img (file), width, and height. Please use numbers, otherwise you will get an error!
 
@@ -29,7 +29,7 @@ Example:
 3. Provide a height
 
 ## Crop Endpoint: POST/crop
-The crop operation extracts a region of the input image, saving in the same format. Specify the width, height, and optional offsets to control the cropping area.
+The crop operation extracts a region of the input image, saving in the same format. Specify the width, height, and optional offsets to control the cropping area. Sharp will save the image using toBuffer() into bytes in memory for cropping, which will get sent back to the user.
 
 Fields required are a img (file), left, top, width, height. Please use numbers, otherwise you will get an error. 
 
@@ -52,6 +52,7 @@ Example:
 
 
 # Receiving Data
+After processing, the microservice returns the modified image as binary data in the HTTP response.
 
 Example:
 
