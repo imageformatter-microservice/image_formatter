@@ -66,9 +66,10 @@ The client should save the response to a file such as: `converted.png`
 The saved file can then be opened normally.
 
 # UML Sequence Diagram:
+![Sequence Diagram of Image Formatter Microservice](UML-Image-Formatter.png)
+
+Link to UML Sequence Diagram for commenting: https://lucid.app/lucidchart/fb0a339e-2839-46d1-bfdd-a662da1a4425/edit?viewport_loc=736%2C355%2C1745%2C1280%2C0_0&invitationId=inv_dcf3ab4e-5264-4caf-8407-c0b7fc64009f
 
 
 
-
-
-Authors: Oren Paley and Emily Tsui
+### Authors: Oren Paley and Emily Tsui
